@@ -21,11 +21,10 @@ function calculateAll() {
 
   // ITERATION 2
   const allProducts = document.getElementsByClassName('product');
-  const firstProduct = allProducts[0];
-  const secondProduct = allProducts[1];
-  const firstSubtotal = updateSubtotal(firstProduct);
-  const secondSubtotal = updateSubtotal(secondProduct);
-  const total = firstSubtotal + secondSubtotal;
+  let total = 0;
+  for (const products of allProducts) {
+    total += updateSubtotal(products);
+  }
 
   // ITERATION 3
   const updateTotal = document.querySelector('#total-value span');
